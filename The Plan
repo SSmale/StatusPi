@@ -1,0 +1,61 @@
+Project: To use LEDs to show the status of the server and its components on bootup and then to show that the server is live.
+
+Additional: to be able to temporally stop the status indicator to allow the LEDs to show user input from a PHP website.
+
+In detail: 
+
+My aim is to create a program/ collection of programs to show the status of the LAMP components (SS) on boot up (to check that they loaded correctly). once all are running ok I want the Display to change to show the status of the web server(WSS). I propose doing this by pinging the DDNS link attached to my router, this will both show the status of the site and possibly the IP address of the ping. ( the server does have email so could it send me an email on change of the IP so i can update other DNS records?). With these statuses I wish to show them on a LED panel attached to the GPIO on the Pi and display the SS using text and the WSS via a smiley or sad face. (could a half sad face be used to show non fatal error?). 
+
+(could it be configured to show when someone visits one of the hosted pages/ a hit counter for the day?)
+
+The second part of my proposal is purely for fun but could a web page be written to override the status indicators to allow the user to input text or pick from a list of faces to show and colours etc. These could then be shown for an amount of time before switching back to the status indicator. (these could also be stored in a DB so that friends could send me messages.)
+
+Background:
+
+I am currently a student studying computing in dorset. I have been teaching myself PHP alongside the taught units of HTML/CSS. Python is a new language that I hope to learn, I have studied Java so hoping that some of the skills will be transferable. 
+
+
+Materials: 
+- RPi Zero 1.2 (could run on 3 if necessary)
+- pHAT or LED panel (https://thepihut.com/products/unicorn-phat , https://thepihut.com/collections/raspberry-pi-zero/products/scroll-phat , https://makersify.com/collections/leds/products/adafruit-mini-8x8-led-matrix-w-i2c-backpack-red )
+
+Programming Components: 
+
+- Python: 	- To interact between the server and the GPIO
+			- To ping the servers Ext IP address to check that its correct and live (could also be 			  displayed)
+			- To provide the link between PHP and the LEDs
+			- To provide the Text or images (smiley face) to the LEDs based on the status.
+
+- PHP:		- To allow interaction with the LEDs directly 
+			- To customise the notifications.
+
+- JavaScript:	- To show feedback on the web page.
+
+- MySQL	:	- To store any details needed
+
+Research:
+
+PHP
+
+http://www.xodustech.com/guides/raspberry-pi-php-gpio 
+
+This guy has a nice little PHP web app to control all the pins. using this i hope to be able to send the commands to the Pi
+
+http://www.raspberry-pi-geek.com/Archive/2014/07/PHP-on-Raspberry-Pi
+
+This also shows the simple way to communicate to a single LED, however I did a little bit of digging and not to sure I would want to add www-data to sudoers.
+
+JavaScript
+
+http://www.instructables.com/id/Simple-and-intuitive-web-interface-for-your-Raspbe/
+This would be handy to show the user that what they have done has been effected by the Pi
+
+(updated 28/5/16)
+
+Next steps:
+
+I am going to see what online resources/ book recommendations I can find for programming in python and look at the ping and then write that to a DB.
+
+I need to look further into how id use Python to check the status of the apps. 
+
+Possibly look into licenses?
