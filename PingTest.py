@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# This script checks to see if the server is up or down. 
+
 import requests
 import time
 
