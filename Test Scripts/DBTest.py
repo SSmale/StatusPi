@@ -20,8 +20,8 @@ while True:
     ip = response.raw._connection.sock.getpeername()
     if response.status_code == requests.codes.ok:
         print('Server Up')
-        cur.execute("INSERT INTO `Ping`.`ping_history` (`ping_id`, `status`) VALUES (ip, 'Live');")
+        cur.execute("INSERT INTO `Ping`.`ping_history` (`ping_id`, `status`) VALUES ('%s', 'Live')", ip)
     else:
         print('Server Down')
-        cur.execute("INSERT INTO `Ping`.`ping_history` (`ping_id`, `status`) VALUES (ip, 'Down');")
+        cur.execute("INSERT INTO `Ping`.`ping_history` (`ping_id`, `status`) VALUES ('%s', 'Down')", ip)
     time.sleep(10)
