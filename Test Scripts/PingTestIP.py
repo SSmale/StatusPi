@@ -9,7 +9,7 @@ while True:
     
     host = 'http://ssmale.ddns.net'
     
-    ip = socket.gethostbyname('php.iamsimonsmale.co.uk')
+    ip = socket.gethostbyname('ssmale.ddns.net')
     
     print ip
         
